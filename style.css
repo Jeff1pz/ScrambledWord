@@ -1155,6 +1155,8 @@ select[name="difficulty"] option[value="hard"] {
 /* Game Over and Win Messages */
 .game-over-message,
 .win-message {
+    position: absolute;
+    transform: translate(-50%, -50%);
     background: var(--glass-bg);
     padding: 3.5rem;
     border-radius: 25px;
@@ -1169,11 +1171,11 @@ select[name="difficulty"] option[value="hard"] {
     align-items: center;
 }
 
-.game-over-message:hover,
-.win-message:hover {
-    border-color: var(--primary-green);
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(46, 204, 113, 0.2);
+.game-over-message .buttons,
+.win-message .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .game-over-message h2,
@@ -1235,7 +1237,14 @@ select[name="difficulty"] option[value="hard"] {
     margin-bottom: 0.5rem;
     letter-spacing: 1px;
 }
-
+/* Additional fix for responsiveness */
+@media (max-width: 768px) {
+    .game-over-message,
+    .win-message {
+        width: 90%;
+        padding: 2rem;
+    }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
