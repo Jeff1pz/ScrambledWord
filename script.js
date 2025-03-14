@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Update leaderboard and redirect
             updateLeaderboard(playerData);
-            window.location.href = 'leaderboard.html';
+            window.location.href = 'leaderboards.html';
         });
     }
 
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Update leaderboard and redirect
             updateLeaderboard(playerData);
-            window.location.href = 'leaderboard.html';
+            window.location.href = 'leaderboards.html';
         });
     }
 
