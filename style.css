@@ -1166,6 +1166,7 @@ select[name="difficulty"] option[value="hard"] {
     margin: 0 auto;
     border: 1px solid var(--glass-border);
     transition: all 0.4s ease;
+    align-items: center;
 }
 
 .game-over-message:hover,
