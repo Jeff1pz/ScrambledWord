@@ -381,7 +381,51 @@ body.leaderboard-page::before {
     box-shadow: 0 4px 15px rgba(231, 76, 60, 0.1);
 }
 
-/* Game Content */
+.game-over-screen {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+    background: rgba(0, 0, 0, 0.7); /* Optional: semi-transparent background */
+    z-index: 9999; /* Ensures it's on top of everything */
+}
+
+/* Style the content box */
+.game-over-content {
+    background: var(--glass-bg);
+    padding: 3.5rem;
+    border-radius: 25px;
+    text-align: center;
+    animation: bounceIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 650px;
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
+}
+
+/* Style the buttons */
+.game-over-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .game-over-content {
+        width: 90%;
+        padding: 2rem;
+    }
+}
+
+
+
 .content {
     background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), rgba(156, 39, 176, 0.05));
     border: 1px solid rgba(33, 150, 243, 0.2);
