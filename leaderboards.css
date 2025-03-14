@@ -1,0 +1,379 @@
+
+/* Color Variables */
+:root {
+    /* Blue Shades */
+    --blue-100: #E3F2FD;
+    --blue-200: #90CAF9;
+    --blue-300: #64B5F6;
+    --blue-400: #42A5F5;
+    --blue-500: #2196F3;
+    --blue-600: #1E88E5;
+    --blue-700: #1976D2;
+    
+    /* Violet Shades */
+    --violet-100: #F3E5F5;
+    --violet-200: #CE93D8;
+    --violet-300: #BA68C8;
+    --violet-400: #AB47BC;
+    --violet-500: #9C27B0;
+    --violet-600: #8E24AA;
+    --violet-700: #7B1FA2;
+    
+    /* Medal Colors */
+    --gold: linear-gradient(135deg, #FFD700, #FFA500);
+    --silver: linear-gradient(135deg, #C0C0C0, #A0A0A0);
+    --bronze: linear-gradient(135deg, #CD7F32, #A0522D);
+    
+    /* Dark Shades */
+    --dark-100: rgba(30, 30, 30, 0.9);
+    --dark-200: rgba(25, 25, 25, 0.95);
+    --dark-300: rgba(20, 20, 20, 0.97);
+    --dark-400: #111111;
+    
+    /* Functional Colors */
+    --primary: var(--blue-500);
+    --secondary: var(--violet-500);
+    --background: var(--dark-400);
+    --text: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.7);
+}
+
+/* Base Styles */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: var(--dark-200);
+    border-bottom: 1px solid rgba(33, 150, 243, 0.1);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-logo {
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-logo i {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--text);
+}
+
+/* Leaderboard Section */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+}
+
+.leaderboard-section {
+    background: var(--dark-200);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+.leaderboard-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(135deg, var(--blue-300), var(--violet-300));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+    background: var(--dark-300);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    padding: 1.5rem;
+    background: linear-gradient(135deg,
+        rgba(33, 150, 243, 0.1),
+        rgba(156, 39, 176, 0.1));
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    padding: 1.5rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(33, 150, 243, 0.1);
+    transition: all 0.3s ease;
+}
+
+.table-row:hover {
+    background: linear-gradient(135deg,
+        rgba(33, 150, 243, 0.05),
+        rgba(156, 39, 176, 0.05));
+    transform: translateX(5px);
+}
+
+.rank-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.rank-badge.gold {
+    background: var(--gold);
+}
+
+.rank-badge.silver {
+    background: var(--silver);
+}
+
+.rank-badge.bronze {
+    background: var(--bronze);
+}
+
+.player-col {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.player-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-500), var(--violet-500));
+    padding: 2px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-name {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.player-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+.score-col {
+    font-weight: 600;
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.accuracy-col {
+    color: #4CAF50;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.top-player {
+    background: linear-gradient(135deg,
+        rgba(33, 150, 243, 0.1),
+        rgba(156, 39, 176, 0.1));
+}
+
+.category-col, .difficulty-col, .time-col {
+    font-weight: 500;
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+}
+
+.category-col {
+    color: var(--blue-300);
+}
+
+.difficulty-col {
+    color: var(--violet-300);
+}
+
+.time-col {
+    color: #4CAF50;
+}
+
+/* Leaderboard Controls */
+.leaderboard-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.leaderboard-controls button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.leaderboard-controls button i {
+    font-size: 1.1rem;
+}
+
+.reset-leaderboard {
+    background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    color: white;
+}
+
+.reset-leaderboard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.back-to-game {
+    background: linear-gradient(135deg, var(--blue-500), var(--violet-500));
+    color: white;
+}
+
+.back-to-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .table-header, .table-row {
+        grid-template-columns: 0.5fr 2fr 1fr 1fr;
+    }
+
+    .category-col, .difficulty-col {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 6rem 1rem 2rem;
+    }
+
+    .leaderboard-title {
+        font-size: 2rem;
+    }
+
+    .table-header, .table-row {
+        grid-template-columns: 0.5fr 2fr 1fr;
+    }
+
+    .time-col {
+        display: none;
+    }
+
+    .player-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        display: none;
+    }
+
+    .leaderboard-section {
+        padding: 1rem;
+    }
+
+    .table-header, .table-row {
+        grid-template-columns: 0.5fr 2fr;
+        padding: 1rem;
+    }
+
+    .score-col {
+        display: none;
+    }
+
+    .leaderboard-controls {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    
+    .leaderboard-controls button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
